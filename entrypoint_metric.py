@@ -10,7 +10,7 @@ def create_file(out_filename,in_url):
 def run_metric(output_dir, name, case_pos, ctrl_pos):
     # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
-    log_file = os.path.join(output_dir, f'{name}.logs.txt')
+    log_file = os.path.join(output_dir, f'{name}.log.txt')
 
     # Download R script to benchmark folder
     R_script_url = "https://raw.githubusercontent.com/sorensandgaard/ob_anonymization_R3_clustering/main/clustering.R"
@@ -19,7 +19,7 @@ def run_metric(output_dir, name, case_pos, ctrl_pos):
 
     # Run R script
     wrapper_R = f"envs/R_wrapper.sh"
-    outfile_pos = f"{output_dir}/{name}.somefile.txt"
+    outfile_pos = f"{output_dir}/{name}.somefile.json"
     R_command = f"{wrapper_R} {script_R_file} {case_pos} {ctrl_pos} {outfile_pos}"
     content = f"R Command\n{R_command}\n\n"
     a = subprocess.run(R_command.split(),capture_output=True,text=True)
