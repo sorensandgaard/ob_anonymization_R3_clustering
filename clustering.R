@@ -4,6 +4,7 @@ library("tidyverse")
 library("Seurat")
 library("Matrix")
 library("aricode")
+library("jsonlite")
 
 rm(list=ls())
 

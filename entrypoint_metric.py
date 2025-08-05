@@ -10,7 +10,7 @@ def create_file(out_filename,in_url):
 def run_metric(output_dir, name, case_pos, ctrl_pos):
     # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
-    log_file = os.path.join(output_dir, f'{name}.logs.txt')
+    log_file = os.path.join(output_dir, f'{name}.log.txt')
 
     # Download R script to benchmark folder
     R_script_url = "https://raw.githubusercontent.com/sorensandgaard/ob_anonymization_R3_clustering/main/clustering.R"
